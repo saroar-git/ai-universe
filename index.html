@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html data-theme="light">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>AI Universe Hub</title>
+
+        <!-- favicon link  -->
+        <link rel="shortcut icon" href="./image/ai.png" type="image/x-icon">
+
+        <!-- tailwind and daisyUI links  -->
+        <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.3/dist/full.css" rel="stylesheet" type="text/css" />
+        <script src="https://cdn.tailwindcss.com"></script>
+
+        <!-- font awesome link -->
+        <script src="https://kit.fontawesome.com/df8226a7eb.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        <!-- header section  -->
+        <header class="text-center my-12">
+            <h1 class="text-5xl font-bold mb-8">AI Universe Hub</h1>
+            <button id="sort-button" class="bg-[#EB5757] px-4 py-3 rounded-lg text-white font-semibold">Sort By
+                Date</button>
+        </header>
+
+        <main>
+            <!-- loader spinner section -->
+            <section id="loader" class="w-full flex justify-center items-center hidden">
+                <progress class="progress w-32"></progress>
+            </section>
+
+            <!-- cards section -->
+            <section id="card-container" class="grid md:grid-cols-3 gap-4">
+            </section>
+
+            <!-- see more button section -->
+            <section class="text-center my-4">
+                <button id="see-more-btn" class="bg-[#EB5757] px-4 py-3 rounded-lg text-white font-semibold">See
+                    More</button>
+            </section>
+
+            <!-- modal section -->
+            <section>
+                <input type="checkbox" id="my-modal" class="modal-toggle" />
+                <div id="modal" class="modal">
+                    <div class="modal-box md:w-11/12 max-w-5xl relative">
+                        <label for="my-modal" class="btn btn-sm btn-circle absolute right-0 top-0">✕</label>
+                        <div class="md:flex gap-6">
+
+                            <!-- modal card 1 -->
+                            <div class="card mb-8 md:mb-0 w-full bg-red-100 shadow-xl p-3 border border-red-700">
+
+                                <!-- modal description -->
+                                <h1 id="description" class="font-semibold pt-8 px-6"></h1>
+
+                                <div class="card-body items-center text-center py-12">
+                                    <div id="price-plan" class="md:flex gap-6">
+
+                                        <!-- modal pricing first -->
+                                        <div class="border bg-white p-2 rounded-lg text-green-700 font-semibold">
+                                            <p id="price-first"></p>
+                                            <p id="plan-first"></p>
+                                        </div>
+
+                                        <!-- modal pricing second -->
+                                        <div class="border bg-white p-2 rounded-lg text-yellow-700 font-semibold my-4 md:my-0">
+                                            <p id="price-second"></p>
+                                            <p id="plan-second"></p>
+                                        </div>
+
+                                        <!-- modal pricing third -->
+                                        <div class="border bg-white p-2 rounded-lg text-red-700 font-semibold">
+                                            <p id="price-third"></p>
+                                            <p id="plan-third"></p>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex md:gap-12 pt-12">
+                                        <div>
+                                            <h1 class="text-start text-xl font-semibold mb-4">Features</h1>
+
+                                            <!-- modal features section -->
+                                            <ul id="feature-container" class="text-start font-semibold text-[13px]">
+                                            </ul>
+                                        </div>
+
+                                        <div>
+                                            <h1 class="text-start text-xl font-semibold mb-4">Integrations</h1>
+                                            <ul id="integrations-container"
+                                                class="text-start font-semibold text-[13px]"></ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- modal card 2  -->
+                            <div class="card w-full bg-slate-50 shadow-xl p-3 border border-gray">
+
+                                <!-- image and accuracy area -->
+                                <figure><img id="image" class="relative w-11/12 rounded" src="" alt="" /></figure>
+                                <div class="toast toast-end toast-middle absolute top-8 right-5">
+                                    <div id="score" class="bg-red-500 text-white px-2 py-1 rounded-lg">
+                                        <h2><span id="accuracy"></span>% Accuracy</h2>
+                                    </div>
+                                </div>
+
+                                <!-- input_output_examples area -->
+                                <div class="card-body items-center text-center">
+                                    <h1 id="input" class="font-semibold text-lg px-4"></h1>
+                                    <p id="output" class="text-sm"></p>
+                                    
+                                    <h1 id="input2" class="font-semibold text-lg px-4 mt-3"></h1>
+                                    <p id="output2" class="text-sm"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- javascript link here  -->
+        <script src="./js/script.js"></script>
+    </body>
+
+</html>
